@@ -1,7 +1,7 @@
-       Ziki Discover
+ZIKI DISCOVER
 Discover the Rhythm of Africa**
 
-        Project Description
+Project Overview(Description)
 
 The word Ziki is a slang word used in my Ugandan Highschool from the Bantu word "Muziki" which means "Music". Ziki Discover is a Flask web application that helps users explore African music and discover african artists by searching for artists, songs, and albums from across the continent. The application integrates the Deezer API to retrieve music information and song previews, and the MusicBrainz API to provide additional artist information such as their country of origin.
 The idea behind this project was to create a simple and interactive platform that celebrates African music while giving me practical experience working with APIs, Flask, and web deployment.
