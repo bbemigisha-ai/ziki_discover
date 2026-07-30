@@ -44,7 +44,7 @@ The idea behind this project was to create a simple and interactive platform tha
 
 My Project Structure
 
-
+```
 ziki_discover/
 │
 ├── static/
@@ -62,7 +62,7 @@ ziki_discover/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
+```
 
  Installation
 
