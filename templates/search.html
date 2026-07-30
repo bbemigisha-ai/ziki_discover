@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Results</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Ziki Discover
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/#trending">Trending</a>
+
+        <a href="/#countries">Countries</a>
+
+        <a href="/#genres">Genres</a>
+
+        <a href="/about">About</a>
+
+    </div>
+
+</nav>
+
+<section id="results">
+
+    <h2>Search Results for "{{query}}"</h2>
+    <p>{{artists|length}} artist(s) found</p>
+
+    <div class="artist-grid">
+
+        {% for artist in artists %}
+        <div class="artist-card">
+            <img src="{{ artist.album.cover_medium }}" alt="{{ artist.title }}">
+            <h3>{{ artist.title }}</h3>
+            
+            <p>{{ artist.artist.name }}</p>
+            
+            <audio controls>
+                <source src="{{ artist.preview }}" type="audio/mpeg">
+                Your browser does not support the audio elements
+            </audio>
+            <br><br>
+            
+            <a href="/artist/{{ artist.artist.id }}" class="artist-button">
+                View Artist
+            </a>
+        
+        </div>
+        
+        {% endfor %}
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziki Discover</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+             Ziki Discover
+        </div>
+
+       <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#trending">Trending</a>
+            <a href="/#countries">Countries</a>
+            <a href="/#genres">Genres</a>
+            <a href="/about">About</a>
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+     <section id="hero">
+         <div class="hero-slide active burna"></div>
+
+        <div class="hero-slide tyla"></div>
+
+        <div class="hero-slide tems"></div>
+
+        <div class="hero-slide mike"></div>
+
+        <div class="hero-slide sheebah"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>
+            Discover the <br>
+            <span>Rhythm of Africa</span>
+        </h1>
+
+        <p>
+            Explore African artists, albums and songs from across the continent.
+        </p>
+
+        <form action="/search">
+
+            <input
+                type="text"
+                name="query"
+                placeholder="Search artists, songs or albums..."
+                required>
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+    <section id="trending">
+         <h2> Trending African Songs</h2>
+         
+         <div class="trending-row">
+            
+            {% for song in trending %}
+            
+            <div class="song-card">
+                <img src="{{ song.album.cover_medium }}">
+                
+                <h3>{{ song.title }}</h3>
+                
+                <p>{{ song.artist.name }}</p>
+                
+                <audio controls>
+                     <source src="{{ song.preview }}" type="audio/mpeg">
+                </audio>
+                
+                <a href="/artist/{{ song.artist.id }}" class="artist-button">
+                     View Artist
+                </a>
+            </div>
+            
+            {% endfor %}
+        
+        </div>
+    
+    </section>
+
+    <!-- Browse by Country -->
+     <section id="countries">
+        
+        <h2>Browse by Country</h2>
+        <div class="country-grid">
+            <div class="country-grid">
+                <a href="/search?query=Sheebah" class="country-card">
+                     UG<br>Uganda
+                    </a>
+                <a href="/search?query=Mike+Kayihura" class="country-card">
+                    RW<br>Rwanda
+                </a>
+
+                <a href="/search?query=Sauti+Sol" class="country-card">
+                     KE<br>Kenya
+                 </a>
+
+                <a href="/search?query=Burna+Boy" class="country-card">
+                     NG<br>Nigeria
+                </a>
+
+                <a href="/search?query=Black+Sherif" class="country-card">
+                    GH<br>Ghana
+                </a>
+
+                <a href="/search?query=Diamond+Platnumz" class="country-card">
+                    TZ<br>Tanzania
+                </a>
+
+                <a href="/search?query=Tyla" class="country-card">
+                    ZA<br>South Africa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse by Genre -->
+     <section id="genres">
+        
+        <h2>Browse by Genre</h2>
+        
+        <div class="genre-grid">
+            
+            <a href="/search?query=Burna+Boy" class="genre-card">
+                Afrobeats
+            </a>
+
+            <a href="/search?query=Kabza+De+Small" class="genre-card">
+                Amapiano
+            </a>
+
+            <a href="/search?query=Nasty+C" class="genre-card">
+               Hip Hop
+            </a>
+
+            <a href="/search?query=Mercy+Chinwo" class="genre-card">
+               Gospel
+            </a>
+
+            <a href="/search?query=Black+Sherif" class="genre-card">
+               Highlife
+            </a>
+
+            <a href="/search?query=Diamond+Platnumz" class="genre-card">
+               Bongo Flava
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <h2>Ziki Discover</h2>
+
+        <p>Discover the Rhythm of Africa</p>
+
+        <p>Powered by Deezer API & MusicBrainz API</p>
+
+        <p>Built by Bertha Mbonimpa Bemigisha</p>
+
+        <p> © 2026 Ziki Discover</p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ artist.name }}</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        Ziki Discover
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/#trending">Trending</a>
+
+        <a href="/#countries">Countries</a>
+
+        <a href="/#genres">Genres</a>
+
+        <a href="/about">About</a>
+
+    </div>
+
+</nav>
+
+<section class="artist-page">
+
+    <div class="artist-profile">
+
+        <img src="{{ artist.picture_xl }}" alt="{{ artist.name }}">
+
+        <div class="artist-info">
+
+            <h1>{{ artist.name }}</h1>
+
+            <p><strong>Country:</strong> {{ country }}</p>
+
+            <p><strong>Fans:</strong> {{ artist.nb_fan }}</p>
+
+            <p><strong>Albums:</strong> {{ artist.nb_album }}</p>
+
+            <a href="/" class="artist-button">← Back to Search</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
