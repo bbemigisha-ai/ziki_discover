@@ -1,5 +1,16 @@
 ZIKI DISCOVER
-Discover the Rhythm of Africa**
+
+Discover the Rhythm of Africa
+
+Deployed Application
+
+The application is deployed and can be accessed through the load balancer at:
+
+**https://34.203.202.192**
+
+Demo Video
+
+**https://youtu.be/-F3j0VkldTM**
 
 Project Overview(Description)
 
@@ -36,10 +47,14 @@ The idea behind this project was to create a simple and interactive platform tha
 - Search for songs, artists and albums
 - Retrieve album artwork
 - Play 30-second song previews
+Documentation:
+https://developers.deezer.com/api
 
 2.MusicBrainz API
 - Retrieve artist information
 - Display artist country of origin ,used in the artist.html page
+Documentation:
+https://musicbrainz.org/doc/MusicBrainz_API
 
 
 My Project Structure
@@ -90,6 +105,24 @@ Open your browser and visit:
 
     http://127.0.0.1:5000
 
+
+Deployment
+
+After testing the application locally, I deployed it to my web servers using Gunicorn, Nginx and HAProxy.
+
+Steps followed
+
+1. Clone the repository onto the web server.
+2. Create and activate a Python virtual environment.
+3. Install the required dependencies using:
+
+     pip install -r requirements.txt
+
+
+4. Run the application with Gunicorn.
+5. Configure Nginx to proxy requests to the Gunicorn server.
+6. Configure HAProxy to distribute traffic between the backend web servers.
+7. Restart the services and verify that the application is accessible through the load balancer.
 
  Challenges faced throughout this project
 
